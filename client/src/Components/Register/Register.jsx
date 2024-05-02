@@ -42,22 +42,12 @@ const Register = () => {
                 <form action="" className='form grid'>
                    
                     <div className='inputDiv'>
-                     <label htmlFor="email">Email</label>
-                     <div className="input flex">
-                     <MdMarkEmailRead className='icon'/>
-                     <input type="email" id='email' placeholder="Enter your email"/>
-                     </div>
-                    </div>
-
-                
-                    <div className='inputDiv'>
                      <label htmlFor="username">Usernsme</label>
                      <div className="input flex">
                      <FaUserShield className='icon'/>
                      <input type="text" id='username' placeholder="Enter Username"/>
                      </div>
                     </div>
-
                     <div className='inputDiv'>
                      <label htmlFor="username">Password</label>
                      <div className="input flex">
