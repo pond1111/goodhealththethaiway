@@ -1,3 +1,4 @@
+import React from 'react';
 import Sidebar from './Components/SideBar Section/Sidebar';
 import Body from '../Dashboard/Components/Body Section/Body';
 

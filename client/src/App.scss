@@ -322,36 +322,12 @@ img, video{
     }
 }
 
-@media screen and (max-width: 602px) {
+//styles pasted of dashboard
+
+@media screen and (max-width: 927px) {
     .loginPage, .registerPage{
-        .container{
-            height: 100%;
-            width: 100%;
-            flex-direction: column;
-            padding: 1.5rem;
-        
-            .videoDiv{
-                width: 100%;
-                .textDiv{
-                    .title{
-                        font-size: 20px;
-                    }
-                    p{
-                        padding: 1rem;
-                    }
-                }
-
-                .footerDiv{
-                    .text{
-                        font-size: 12px;
-                    }
-
-                    .btn{
-                        padding: .4rem 1.5rem;
-                    }
-                }
-            }
-
+        .container{ 
+            width: 85%;
         }
     }
 }
