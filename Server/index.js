@@ -5,9 +5,8 @@ const cors = require('cors')
 
 app.use(cors())
 app.use(express.json())
-//app.get('/',(request,response)=>{
-   // response.send('1212')
-//})
+
+
 app.listen(3002,()=>{
     console.log('server is runduang')
 })
@@ -23,15 +22,11 @@ const db = mysql.createConnection({
 app.post('/register',(req, res)=>{
     const sentUsername = req.body.Username
     const sentPhone = req.body.Phone
-    
-
-    if (!sentUsername || !sentPhone) {
-        return res.status(400).send({ message: 'Username and Phone are required' })
-
-    }
+    console.log(sentUsername,sentPhone) 
+     
 
 
-    const SQL = 'INSERT INTO user (username,phone) VALUES(?,?,?)'
+    const SQL = 'INSERT INTO user (username,phone) VALUES(?,?)'
 
     const Valuse = [sentUsername,sentPhone]
 
@@ -46,4 +41,27 @@ app.post('/register',(req, res)=>{
     })
 })
 
+app.post('/Login',(req,res)=>{
+    const sentLoginUsername = req.body.Username
+    const sentLoginPhone = req.body.Phone
+    //console.log(sentUsername,sentPhone) 
+     
+
+
+    const SQL = 'SELECT * FROM user WHERE username = ? && phone = ?'
+
+    const Valuse = [sentLoginUsername,sentLoginPhone]
+
+    db.query(SQL, Valuse, (err, results)=>{
+        if(err){
+            res.send({error: err})
+        }
+        if(results.length > 0){
+            res.send()
+        }
+        else{
+            res,send({massage: `Credentials Don't match!`})
+        }
+    })
+})
 

@@ -1,23 +1,21 @@
-import React, {userState} from 'react';
+import React, {useState} from 'react';
 import './Register.scss'
 import '../../App.scss'
 import { Link } from "react-router-dom"
-import { useState } from 'react';
 
 
 import video from '../../LoginAssets/Video.mp4'
 import logo from '../../LoginAssets/logo.png'
 
 import {FaUserShield} from "react-icons/fa"
-import {MdMarkEmailRead} from "react-icons/md"
 import {BsFillShieldLockFill} from "react-icons/bs"
 import {AiOutlineSwapRight} from "react-icons/ai"
 import axios from 'axios'; 
 
 const Register = () => {
-
     const [username, setusername] = useState('')
     const [phone, setphone] = useState('')
+   
 
     const createUser = ()=> {
         axios.post('http://localhost:3002/register',{ 
