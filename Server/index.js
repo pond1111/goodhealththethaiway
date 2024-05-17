@@ -42,25 +42,26 @@ app.post('/register',(req, res)=>{
 })
 
 app.post('/Login',(req,res)=>{
-    const sentLoginUsername = req.body.Username
-    const sentLoginPhone = req.body.Phone
-    //console.log(sentUsername,sentPhone) 
-     
-
-
+    const sentLoginUsername = req.body.LoginUsername
+    const sentLoginPhone = req.body.LoginPhone
+    
+    
     const SQL = 'SELECT * FROM user WHERE username = ? && phone = ?'
 
     const Valuse = [sentLoginUsername,sentLoginPhone]
-
+    //console.log(Valuse)
     db.query(SQL, Valuse, (err, results)=>{
         if(err){
             res.send({error: err})
         }
         if(results.length > 0){
+           //console.log(results)
             res.send()
         }
         else{
-            res,send({massage: `Credentials Don't match!`})
+            console.log(results)
+            res.send({massage: `Credentials Don't match!`})
+            
         }
     })
 })

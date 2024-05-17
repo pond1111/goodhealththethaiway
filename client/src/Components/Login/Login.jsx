@@ -18,9 +18,12 @@ const Login = () => {
 
     const [loginusername, setloginusername] = useState('')
     const [loginphone, setloginphone] = useState('')
+    
 
-    const loginUser = ()=> {
-        axios.post('http://localhost:3002/login',{ 
+    const loginUser = async(Event)=> {
+        Event.preventDefault()
+        //console.log(loginusername,loginphone)//อะไร
+        await axios.post('http://localhost:3002/login',{ 
             LoginUsername: loginusername,
             LoginPhone: loginphone
         }).then((response)=>{
@@ -39,7 +42,7 @@ const Login = () => {
             
             <div className="textDiv">
                 <h2 className="title">ร่างกายดี ชีวิตดี มีความสุข</h2>
-                <p>มาจดบันทึกการเปลี่ยนแปลงของร่างกายกัน</p>
+                <p>มาจดบันทึกการเปลี่ยนแปลงของร่างกายด้วยกัน</p>
             </div>
 
             <div className="footerDiv flex">
@@ -79,7 +82,7 @@ const Login = () => {
                      </div>
                     </div>
 
-                    <button type='submit' className='btn flex' onClick={loginUser}>
+                    <button type='submit' className='btn flex' onClick={(Event)=>loginUser(Event)}>
                         <span>Login</span>
                         <AiOutlineSwapRight className="icon"/>
                     </button>

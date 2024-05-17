@@ -1,6 +1,6 @@
 import React from 'react';
 import Sidebar from './Components/SideBar Section/Sidebar';
-import Body from '../Dashboard/Components/Body Section/Body';
+import Top from '../Dashboard/Components/Body Section/Top';
 
 
 const Dashboard = () => {
@@ -8,7 +8,7 @@ const Dashboard = () => {
         <div className='dashboard flex'>
            <div className='dashboardContainer flex'>
             <Sidebar/>
-            <Body/> 
+            <Top/> 
            </div>
         </div>
         

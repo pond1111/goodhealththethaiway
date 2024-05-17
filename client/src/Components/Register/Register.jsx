@@ -34,14 +34,14 @@ const Register = () => {
                 <video src={video} autoPlay muted loop></video>
             
             <div className="textDiv">
-                <h2 className="title">Create And Sell Extraordinary Products</h2>
-                <p>Adopt the peace of nature!</p>
+                <h2 className="title">ร่างกายดี ชีวิตดี มีความสุข</h2>
+                <p>มาจดบันทึกการเปลี่ยนแปลงของร่างกายด้วยกัน</p>
             </div>
 
             <div className="footerDiv flex">
-             <span className="text">have a account?</span>
+             <span className="text">มีบัญชีแล้วใช่ใหม?</span>
              <Link to={'/'}>
-             <button className="btn">To LoginPage</button>
+             <button className="btn">กลับไปหน้า ล็อคอิน</button>
              </Link>
             </div>
             </div>
@@ -49,13 +49,13 @@ const Register = () => {
             <div className="formDiv flex">
                 <div className="headerDiv">
                     < img src={logo} alt="logo image" />
-                    <h3>Let Us Know You!</h3>
+                    <h3> </h3>
                 </div>
 
                 <form action="" className='form grid'>
             
                     <div className='inputDiv'>
-                     <label htmlFor="username">Usernsme</label>
+                     <label htmlFor="username">ชื่อผู้ใช้</label>
                      <div className="input flex">
                      <FaUserShield className='icon'/>
                      <input type="text" id='username' placeholder="Enter Username"
@@ -65,7 +65,7 @@ const Register = () => {
                      </div>
                     </div>
                     <div className='inputDiv'>
-                     <label htmlFor="username">Phone Number</label>
+                     <label htmlFor="username">เบอร์โทร</label>
                      <div className="input flex">
                      <BsFillShieldLockFill  className='icon'/>
                      <input type="phone" id='phone' placeholder="Enter Phone Number"
