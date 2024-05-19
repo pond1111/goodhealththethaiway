@@ -7,61 +7,57 @@ app.use(cors())
 app.use(express.json())
 
 
-app.listen(3002,()=>{
-    console.log('server is runduang')
+app.listen(3002, () => {
+    console.log(`Server listening on port 3002`)
 })
 
 const db = mysql.createConnection({
-    user:'root',
-    host:'localhost',
-    password:'',
-    database:'pepledb',
-    
+    host: 'localhost',
+    port: '3306',
+    user: 'root',
+    password: '',
+    database: 'people',
 })
 
-app.post('/register',(req, res)=>{
+app.post('/register', (req, res) => {
     const sentUsername = req.body.Username
     const sentPhone = req.body.Phone
-    console.log(sentUsername,sentPhone) 
-     
-
 
     const SQL = 'INSERT INTO user (username,phone) VALUES(?,?)'
 
-    const Valuse = [sentUsername,sentPhone]
+    const Valuse = [sentUsername, sentPhone]
 
-    db.query(SQL, Valuse, (err, results)=>{
-        if(err){
+    db.query(SQL, Valuse, (err, results) => {
+        if (err) {
             res.send(err)
         }
-        else{
+        else {
             console.log('User inserted succcessfully')
-            res.send({message:'User added'})
+            res.send({ message: 'User added' })
         }
     })
 })
 
-app.post('/Login',(req,res)=>{
+app.post('/Login', (req, res) => {
     const sentLoginUsername = req.body.Username
     const sentLoginPhone = req.body.Phone
-    //console.log(sentUsername,sentPhone) 
-     
 
 
-    const SQL = 'SELECT * FROM user WHERE username = ? && phone = ?'
 
-    const Valuse = [sentLoginUsername,sentLoginPhone]
+    // const SQL = 'SELECT * FROM user WHERE username = ? && phone = ?'
 
-    db.query(SQL, Valuse, (err, results)=>{
-        if(err){
-            res.send({error: err})
-        }
-        if(results.length > 0){
-            res.send()
-        }
-        else{
-            res,send({massage: `Credentials Don't match!`})
-        }
-    })
+    // const Valuse = [sentLoginUsername,sentLoginPhone]
+
+    // db.query(SQL, Valuse, (err, results)=>{
+    //     if(err){
+    //         res.send({error: err})
+    //     }
+    //     if(results.length > 0){
+    //         res.send()
+    //     }
+    //     else{
+    //         res,send({massage: `Credentials Don't match!`})
+    //     }
+    // })
 })
 
