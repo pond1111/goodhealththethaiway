@@ -1,6 +1,7 @@
 import React from 'react'
+import './top.scss'
 
-function Top() {
+const Top = () => {
   return (
     <div>Top</div>
   )

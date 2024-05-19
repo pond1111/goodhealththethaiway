@@ -22,7 +22,7 @@ const Login = () => {
 
     const loginUser = async(Event)=> {
         Event.preventDefault()
-        //console.log(loginusername,loginphone)//อะไร
+        
         await axios.post('http://localhost:3002/login',{ 
             LoginUsername: loginusername,
             LoginPhone: loginphone
