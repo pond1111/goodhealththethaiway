@@ -16,7 +16,7 @@ const db = mysql.createConnection({
     port: '3306',
     user: 'root',
     password: '',
-    database: 'people',
+    database: 'pepledb',
 })
 
 app.post('/register', (req, res) => {
@@ -39,9 +39,9 @@ app.post('/register', (req, res) => {
 })
 
 app.post('/Login',(req,res)=>{
-    const sentLoginUsername = req.body.Username
-    const sentLoginPhone = req.body.Phone
-    //console.log(sentUsername,sentPhone) 
+    const sentLoginUsername = req.body.LoginUsername
+    const sentLoginPhone = req.body.LoginPhone
+    console.log(sentLoginUsername,sentLoginPhone) 
      
 
 
@@ -54,10 +54,10 @@ app.post('/Login',(req,res)=>{
             res.send({error: err})
         }
         if(results.length > 0){
-            res.send()
+            res.status(200).json({status:"Login success"})
         }
         else{
-            res,send({massage: `Credentials Don't match!`})
+            res.send({massage: `Credentials Don't match!`})
         }
     })
 })

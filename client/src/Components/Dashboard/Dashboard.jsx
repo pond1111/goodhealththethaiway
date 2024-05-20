@@ -1,7 +1,7 @@
 import React from 'react';
 import Sidebar from './Components/SideBar Section/Sidebar';
 import Body from './Components/Body Section/Body';
-import Top from './Components/Body Section/Top Section/Top';
+import "../../App.scss";
 
 
 const Dashboard = () => {

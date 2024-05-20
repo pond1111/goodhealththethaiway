@@ -9,6 +9,7 @@ import { AiOutlinePieChart } from "react-icons/ai";
 import { BiTrendingUp } from "react-icons/bi";
 import { MdOutlinePermContactCalendar } from "react-icons/md";
 import { BsCreditCard2Front } from "react-icons/bs";
+import { BsQuestionCircle } from "react-icons/bs";
 
 
 import logo from '../../../../LoginAssets/logo.png';
@@ -23,7 +24,7 @@ const SideBar = () => {
         <h2>Planti.</h2>
       </div>
 
-      <div className="meuuDiv">
+      <div className="menuDiv">
         <h3 className="divTitle">
           QUICK MENU
         </h3>
@@ -111,6 +112,18 @@ const SideBar = () => {
           </li>
 
         </ul>
+      </div>
+
+      <div className='sidBarCard'>
+        <BsQuestionCircle className='icon'/>
+        <div className='cardContent'>
+          <div className='circle1'></div>
+          <div className='circle2'></div>
+
+          <h3>Help Center</h3>
+          <p>Having trouble in Planti, please Contact us from more question.</p>
+          <button className='btn'>Go to Help Center</button>
+        </div>
       </div>
     </div>
   )

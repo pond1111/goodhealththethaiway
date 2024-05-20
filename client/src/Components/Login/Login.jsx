@@ -11,19 +11,20 @@ import { FaUserShield } from "react-icons/fa";
 import { BsFillShieldLockFill } from "react-icons/bs";
 import { AiOutlineSwapRight } from "react-icons/ai";
 
+
 const Login = () => {
-
-   // e.prevenDefault();
-
-    const [loginusername, setloginusername] = useState('')
-    const [loginphone, setloginphone] = useState('')
-
-    const loginUser = ()=> {
+  const Navigate=useNavigate()
+  
+  const [loginusername, setloginusername] = useState('')
+  const [loginphone, setloginphone] = useState('')
+  
+  const loginUser = (e)=> {
+         e.preventDefault();
         axios.post('http://localhost:3002/login',{ 
             LoginUsername: loginusername,
             LoginPhone: loginphone
         }).then((response)=>{
-            console.log(response)
+            if(response.data.status==="Login success"){Navigate("/dashboard")}
         })
     }
 
@@ -85,7 +86,7 @@ const Login = () => {
               </div>
             </div>
 
-                    <button type='submit' className='btn flex' onClick={loginUser}>
+                    <button type='submit' className='btn flex' >
                         <span>Login</span>
                         <AiOutlineSwapRight className="icon"/>
                     </button>
