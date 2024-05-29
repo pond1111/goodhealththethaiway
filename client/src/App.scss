@@ -91,7 +91,7 @@ img, video{
 }
 
 
-.loginPage, .registerPage{
+.loginPage, .registerPage, .AdminLoginPage , .AdminregisterPage{
     height: 100vh;
     width: 100%;
     margin: auto;
@@ -265,7 +265,7 @@ img, video{
             }
         
 
-            .forgotPassword{
+            .AdminLogin{
                 font-size: 13px;
                 color: var(--blackColor);
                 opacity: .7;

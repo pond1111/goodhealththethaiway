@@ -1,18 +1,19 @@
 import { useState } from "react";
-import "./Login.scss";
-import "../../App.scss";
+//import "./Login.scss";
+import "../App.scss";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-import video from "../../LoginAssets/Video.mp4";
-import logo from "../../LoginAssets/logo.png";
+import video from "../LoginAssets/Video.mp4";
+import logo from "../LoginAssets/logo.png";
 
 import { FaUserShield } from "react-icons/fa";
+import { BsFillShieldLockFill } from "react-icons/bs";
 import { AiOutlineSwapRight } from "react-icons/ai";
 import { FaPhoneAlt } from "react-icons/fa";
 
 
-const Login = () => {
+const AdminLogin = () => {
   const Navigate=useNavigate()
   
   const [loginusername, setloginusername] = useState('')
@@ -86,16 +87,25 @@ const Login = () => {
               </div>
             </div>
 
+            <div className="inputDiv">
+              <label htmlFor="password">รหัสผ่าน</label>
+              <div className="input flex">
+                <BsFillShieldLockFill className="icon" />
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Enter password"
+                  onChange={(event) => {
+                    setloginphone(event.target.value);
+                  }}
+                />
+              </div>
+            </div>
+
                     <button type='submit' className='btn flex' >
                         <span>Login</span>
                         <AiOutlineSwapRight className="icon"/>
                     </button>
-
-            {/* <a href="/dashboard">Dashboard</a> */}
-
-            <span className="AdminLogin">
-              Admin Login <Link to="/adminlogin">Click Here</Link>
-            </span>
           </form>
         </div>
       </div>
@@ -103,4 +113,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default AdminLogin;

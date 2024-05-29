@@ -10,17 +10,17 @@ import logo from '../../LoginAssets/logo.png'
 import {FaUserShield} from "react-icons/fa"
 import {BsFillShieldLockFill} from "react-icons/bs"//แม่กุญแจ
 import {AiOutlineSwapRight} from "react-icons/ai"
-import { FaPhoneAlt } from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa"
 
 import axios from 'axios'; 
 
-const Register = () => {
+const AdminRegister = () => {
     const [username, setusername] = useState('')
     const [phone, setphone] = useState('')
    
 
     const createUser = ()=> {
-        axios.post('http://localhost:3002/register',{ 
+        axios.post('http://localhost:3002/adminregister',{ 
             Username: username,
             Phone: phone
         }).then(()=>{
@@ -29,7 +29,7 @@ const Register = () => {
     }
 
     return (
-        <div className='registerPage flex'>  
+        <div className='AdminregisterPage flex'>  
             <div className='container flex'> 
 
             <div className='videoDiv'>
@@ -82,9 +82,7 @@ const Register = () => {
                         <AiOutlineSwapRight className="icon"/>
                     </button>
 
-                    <span className="AdminLogin">
-                        Admin Register <Link to="/adminregister">Click Here</Link>
-                    </span>
+                    
 
                 </form>
             </div>
@@ -95,4 +93,4 @@ const Register = () => {
     )
 }
 
-export default Register     
+export default Adminregister     
