@@ -38,6 +38,26 @@ app.post('/register', (req, res) => {
     })
 })
 
+app.post('/adminregister', (req, res) => {
+    const sentAdminusername = req.body.AdminUsername
+    const sentAdminphone = req.body.AdminPhone
+    const sentAdminpassword = req.body.Adminpassword
+
+    const SQL = 'INSERT INTO user (adminusername,adminphone,adminpassword) VALUES(?,?,?)'
+
+    const Valuse = [sentAdminusername, sentAdminphone, sentAdminpassword ]
+
+    db.query(SQL, Valuse, (err, results) => {
+        if (err) {
+            res.send(err)
+        }
+        else {
+            console.log('User inserted succcessfully')
+            res.send({ message: 'User added' })
+        }
+    })
+})
+
 app.post('/Login',(req,res)=>{
     const sentLoginUsername = req.body.LoginUsername
     const sentLoginPhone = req.body.LoginPhone

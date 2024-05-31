@@ -15,21 +15,23 @@ import { FaPhoneAlt } from "react-icons/fa"
 import axios from 'axios'; 
 
 const AdminRegister = () => {
-    const [username, setusername] = useState('')
-    const [phone, setphone] = useState('')
+    const [adminusername, setAdminusername] = useState('')
+    const [adminphone, setAdminphone] = useState('')
+    const [adminpassword, setAdminpassword] = useState('')
    
 
     const createUser = ()=> {
         axios.post('http://localhost:3002/adminregister',{ 
-            Username: username,
-            Phone: phone
+            AdminUsername: adminusername,
+            AdminPhone: adminphone,
+            Adminpassword: adminpassword
         }).then(()=>{
             console.log('User had been created')
         })
     }
 
     return (
-        <div className='AdminregisterPage flex'>  
+        <div className='registerPage flex'>  
             <div className='container flex'> 
 
             <div className='videoDiv'>
@@ -62,7 +64,7 @@ const AdminRegister = () => {
                      <FaUserShield className='icon'/>
                      <input type="text" id='username' placeholder="Enter Username"
                      on onChange={(event)=>{
-                        setusername(event.target.value)
+                        setAdminusername(event.target.value)
                      }}/>
                      </div>
                     </div>
@@ -72,7 +74,18 @@ const AdminRegister = () => {
                      <FaPhoneAlt  className='icon'/>
                      <input type="phone" id='phone' placeholder="Enter Phone Number"
                      on onChange={(event)=>{
-                        setphone(event.target.value)
+                        setAdminphone(event.target.value)
+                     }}/>
+                     </div>
+                    </div>
+
+                    <div className='inputDiv'>
+                     <label htmlFor="Adminpassword">รหัสผ่าน</label>
+                     <div className="input flex">
+                     <BsFillShieldLockFill  className='icon'/>
+                     <input type="Adminpassword" id='Adminpassword' placeholder="Enter Password"
+                     on onChange={(event)=>{
+                        setAdminpassword(event.target.value)
                      }}/>
                      </div>
                     </div>
@@ -93,4 +106,4 @@ const AdminRegister = () => {
     )
 }
 
-export default Adminregister     
+export default AdminRegister     

@@ -16,14 +16,16 @@ import { FaPhoneAlt } from "react-icons/fa";
 const AdminLogin = () => {
   const Navigate=useNavigate()
   
-  const [loginusername, setloginusername] = useState('')
-  const [loginphone, setloginphone] = useState('')
+  const [Adminloginusername, setAdminloginusername] = useState('')
+  const [Adminloginphone, setAdminloginphone] = useState('')
+  const [Adminloginpassword, setAdminloginpassword] = useState('')
   
-  const loginUser = (e)=> {
+  const Adminlogin = (e)=> {
          e.preventDefault();
-        axios.post('http://localhost:3002/login',{ 
-            LoginUsername: loginusername,
-            LoginPhone: loginphone
+        axios.post('http://localhost:3002/Adminlogin',{ 
+            AdminLoginUsername: Adminloginusername,
+            AdminLoginPhone: Adminloginphone,
+            AdminloginPassword: Adminloginpassword
         }).then((response)=>{
             if(response.data.status==="Login success"){Navigate("/dashboard")}
         })
@@ -56,9 +58,9 @@ const AdminLogin = () => {
             <img src={logo} alt="logo image" />
           </div>
 
-          <form action="" className="form grid" onSubmit={loginUser}>
+          <form action="" className="form grid" onSubmit={Adminlogin}>
             <div className="inputDiv">
-              <label htmlFor="username">ขื่อ ผู้ใช้</label>
+              <label htmlFor="Adminusername">ขื่อ ผู้ใช้</label>
               <div className="input flex">
                 <FaUserShield className="icon" />
                 <input
@@ -66,7 +68,7 @@ const AdminLogin = () => {
                   id="username"
                   placeholder="Enter Username"
                   onChange={(event) => {
-                    setloginusername(event.target.value);
+                    setAdminloginusername(event.target.value);
                   }}
                 />
               </div>
@@ -81,7 +83,7 @@ const AdminLogin = () => {
                   id="phone"
                   placeholder="Enter Phone"
                   onChange={(event) => {
-                    setloginphone(event.target.value);
+                    setAdminloginphone(event.target.value);
                   }}
                 />
               </div>
@@ -96,7 +98,7 @@ const AdminLogin = () => {
                   id="password"
                   placeholder="Enter password"
                   onChange={(event) => {
-                    setloginphone(event.target.value);
+                    setAdminloginpassword(event.target.value);
                   }}
                 />
               </div>

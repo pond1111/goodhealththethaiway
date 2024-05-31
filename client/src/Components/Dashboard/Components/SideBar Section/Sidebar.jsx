@@ -2,14 +2,9 @@ import React from 'react'
 import './sidebar.scss'
 
 import { IoMdSpeedometer } from "react-icons/io";
-import { MdDeliveryDining } from "react-icons/md";
-import { MdOutlineExplore } from "react-icons/md";
-import { BsTrophy } from "react-icons/bs";
-import { AiOutlinePieChart } from "react-icons/ai";
-import { BiTrendingUp } from "react-icons/bi";
-import { MdOutlinePermContactCalendar } from "react-icons/md";
-import { BsCreditCard2Front } from "react-icons/bs";
 import { BsQuestionCircle } from "react-icons/bs";
+import { RiHealthBookFill } from "react-icons/ri";
+import { BiSolidReport } from "react-icons/bi";
 
 
 import logo from '../../../../LoginAssets/logo.png';
@@ -21,98 +16,49 @@ const SideBar = () => {
 
       <div className='logoDiv flex'>
         <img src={logo} alt='Image Name'/>
-        <h2>Planti.</h2>
+        <h2>good
+            <br/>
+            health 
+            <br/>
+            the thai way</h2>
       </div>
 
       <div className="menuDiv">
-        <h3 className="divTitle">
-          QUICK MENU
-        </h3>
+        
         <ul className="menuLists grid">
+          <li className='listitem'>
+            <a href='#' className='menuLink flex'>
+              <RiHealthBookFill className='icon'/>
+              <span className='smallText'>
+                การบันทึกสุขภาพ
+              </span>
+            </a>
+          </li>
+
+          <li className='listitem'>
+            <a href='#' className='menuLink flex'>
+              <BiSolidReport className='icon'/>
+              <span className='smallText'>
+              กราฟเปรียบเทียบ
+              ค่าน้ำตาลสะสม
+              </span>
+            </a>
+          </li>
 
           <li className='listitem'>
             <a href='#' className='menuLink flex'>
               <IoMdSpeedometer className='icon'/>
               <span className='smallText'>
-                Dash board
-              </span>
-            </a>
-          </li>
-
-          <li className='listitem'>
-            <a href='#' className='menuLink flex'>
-              <MdDeliveryDining className='icon'/>
-              <span className='smallText'>
-                My Order
-              </span>
-            </a>
-          </li>
-
-          <li className='listitem'>
-            <a href='#' className='menuLink flex'>
-              <MdOutlineExplore className='icon'/>
-              <span className='smallText'>
-                Explore
+                ภาพรวมข้อมูล
               </span>
             </a>
           </li>
         
-          <li className='listitem'>
-            <a href='#' className='menuLink flex'>
-              <BsTrophy className='icon'/>
-              <span className='smallText'>
-                Product
-              </span> 
-            </a>
-          </li>
+
 
         </ul>
       </div>
 
-      <div className="settingDiv">
-        <h3 className="divTitle">
-          SETTING
-        </h3>
-        <ul className="menuLists grid">
-
-          <li className='listitem'>
-            <a href='#' className='menuLink flex'>
-              <AiOutlinePieChart className='icon'/>
-              <span className='smallText'>
-                Charts
-              </span>
-            </a>
-          </li>
-
-          <li className='listitem'>
-            <a href='#' className='menuLink flex'>
-              <BiTrendingUp className='icon'/>
-              <span className='smallText'>
-                Trend
-              </span>
-            </a>
-          </li>
-
-          <li className='listitem'>
-            <a href='#' className='menuLink flex'>
-              <MdOutlinePermContactCalendar className='icon'/>
-              <span className='smallText'>
-                Contact
-              </span>
-            </a>
-          </li>
-        
-          <li className='listitem'>
-            <a href='#' className='menuLink flex'>
-              <BsCreditCard2Front className='icon'/>
-              <span className='smallText'>
-                bliling
-              </span> 
-            </a>
-          </li>
-
-        </ul>
-      </div>
 
       <div className='sidBarCard'>
         <BsQuestionCircle className='icon'/>

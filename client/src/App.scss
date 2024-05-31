@@ -283,18 +283,17 @@ img, video{
     }
 }
 
-.dashboard{
+.dashboard {
     display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: auto;
-        padding: 1rem;
-  
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    height: 100vh; // Ensure the dashboard takes the full height of the viewport
 
-    .dashboardContainer{
+    .dashboardContainer {
         position: relative;
         width: 95vw;
-        height: 95vw;
+        height: 95vh; // Use viewport height instead of viewport width for height
         display: flex;
         align-items: center;
         justify-content: center;
@@ -304,6 +303,7 @@ img, video{
         box-shadow: 2px 2px 8px var(--grayText);
     }
 }
+
 
 @media screen and (max-width: 500px){
     .heading{
