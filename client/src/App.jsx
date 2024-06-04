@@ -4,6 +4,7 @@ import Dashboard from "./Components/Dashboard/Dashboard.jsx";
 import Register from "./Components/Register/Register";
 import AdminLogin from "./Components/AdminLogin.jsx";
 import Adminregister from "./Components/Register/Adminregister";
+import DashboardShart from "./Components/Dashboard/Dashboardshart.jsx";
 
 import {  Routes, Route } from "react-router-dom";
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/Register" element={<Register />} />
           <Route path="/AdminLogin" element={<AdminLogin />} />
           <Route path="/Adminregister" element={<Adminregister/>}/>
+          <Route path="/DashboardShart" element={<DashboardShart />} />
         </Routes>
     </div>
   );

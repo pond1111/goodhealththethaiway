@@ -49,9 +49,10 @@
     .menuDiv{
         .menuLists{
             .listitem{
-                padding: .2rem 1.5rem;
+                padding: 1rem 1rem;
                 width: 100%;
-                position: relative;
+                position:relative;
+                
 
                 &::before{
                     position: absolute;

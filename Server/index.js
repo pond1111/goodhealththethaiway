@@ -19,6 +19,18 @@ const db = mysql.createConnection({
     database: 'pepledb',
 })
 
+app.get('/listingshart',(req,res) => {
+    const SQL ='SELECT * FROM userdata '
+    db.query(SQL,(err, results) => {
+        if (err) {
+            res.send(err)
+        }
+        else {
+            res.send(results)
+        }
+    })
+})
+
 app.post('/register', (req, res) => {
     const sentUsername = req.body.Username
     const sentPhone = req.body.Phone
@@ -43,7 +55,9 @@ app.post('/adminregister', (req, res) => {
     const sentAdminphone = req.body.AdminPhone
     const sentAdminpassword = req.body.Adminpassword
 
-    const SQL = 'INSERT INTO user (adminusername,adminphone,adminpassword) VALUES(?,?,?)'
+    console.log(sentAdminusername,sentAdminphone,sentAdminpassword)
+
+    const SQL = 'INSERT INTO admin (adminusername,adminphone,adminpassword) VALUES(?,?,?)'
 
     const Valuse = [sentAdminusername, sentAdminphone, sentAdminpassword ]
 
@@ -81,4 +95,30 @@ app.post('/Login',(req,res)=>{
         }
     })
 })
+
+app.post('/Adminlogin',(req,res)=>{
+    const sentAdminLoginUsername = req.body.AdminLoginUsername
+    const sentAdminLoginPhone = req.body.AdminLoginPhone
+    const senAdminloginPassword = req.body.AdminloginPassword
+    console.log(sentAdminLoginUsername,sentAdminLoginPhone,senAdminloginPassword) 
+     
+
+
+    const SQL = 'SELECT * FROM admin WHERE Adminusername = ? && Adminphone = ? && Adminpassword = ?'
+
+    const Valuse = [sentAdminLoginUsername,sentAdminLoginPhone,senAdminloginPassword]
+
+    db.query(SQL, Valuse, (err, results)=>{
+        if(err){
+            res.send({error: err})
+        }
+        if(results.length > 0){
+            res.status(200).json({status:"Login success"})
+        }
+        else{
+            res.send({massage: `Credentials Don't match!`})
+        }
+    })
+})
+
 

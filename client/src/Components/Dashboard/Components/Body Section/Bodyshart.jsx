@@ -1,21 +1,21 @@
 import React from 'react'
 import './body.scss'
-import Top from './Top Section/Top'
-import Listing from './Listing Section/Listing'
+import Topshart from './Top Section/Topshart'
+import Listingshart from './Listing Section/Listingshart';
 import Activity from './Acyivity Section/Activity'
 
-const Body = () => {
+const Bodyshart = () => {
   return (
     <div className='mainContent'>
       
-      <Top/>
+      <Topshart/>
 
       <div className='bottom flex'>
-      <Listing/>
+      <Listingshart/>
       {/* <Activity/> */}
     </div>
     </div>
   )
 }
 
-export default Body
+export default Bodyshart

@@ -27,12 +27,13 @@ const SideBar = () => {
         
         <ul className="menuLists grid">
           <li className='listitem'>
-            <a href='#' className='menuLink flex'>
+            <Link to='/Dashboard' className='menuLink flex'>
               <RiHealthBookFill className='icon'/>
               <span className='smallText'>
                 การบันทึกสุขภาพ
               </span>
-            </a>
+            </Link>
+
           </li>
 
           
@@ -52,7 +53,7 @@ const SideBar = () => {
       </div>
 
 
-      {/* <div className='sidBarCard'>
+      <div className='sidBarCard'>
         <BsQuestionCircle className='icon'/>
         <div className='cardContent'>
           <div className='circle1'></div>
@@ -62,7 +63,7 @@ const SideBar = () => {
           <p>Having trouble in Planti, please Contact us from more question.</p>
           <button className='btn'>Go to Help Center</button>
         </div>
-      </div> */}
+      </div>
     </div>
   )
 }
