@@ -24,7 +24,7 @@ const Login = () => {
             LoginUsername: loginusername,
             LoginPhone: loginphone
         }).then((response)=>{
-            if(response.data.status==="Login success"){Navigate("/dashboard")}
+            if(response.data.status==="Login success"){Navigate("/DashboardShart")}
         })
     }
 

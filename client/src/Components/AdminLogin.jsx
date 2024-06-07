@@ -27,7 +27,7 @@ const AdminLogin = () => {
             AdminLoginPhone: Adminloginphone,
             AdminloginPassword: Adminloginpassword
         }).then((response)=>{
-            if(response.data.status==="Login success"){Navigate("/dashboard")}
+            if(response.data.status==="Login success"){Navigate("/DashboardAdmin")}
         })
     }
 

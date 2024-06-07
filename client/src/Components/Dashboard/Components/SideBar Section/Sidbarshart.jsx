@@ -26,7 +26,7 @@ const SideBar = () => {
       <div className="menuDiv">
         
         <ul className="menuLists grid">
-          <li className='listitem'>
+          {/* <li className='listitem'>
             <Link to='/Dashboard' className='menuLink flex'>
               <RiHealthBookFill className='icon'/>
               <span className='smallText'>
@@ -34,7 +34,7 @@ const SideBar = () => {
               </span>
             </Link>
 
-          </li>
+          </li> */}
 
           
           <li className='listitem'>

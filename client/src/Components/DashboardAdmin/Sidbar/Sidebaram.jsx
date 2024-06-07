@@ -1,16 +1,17 @@
 import React from 'react'
-import './sidebar.scss'
+import '../../Dashboard/Components/SideBar Section/sidebar.scss'
 import { Link } from "react-router-dom"
 
 import { BsQuestionCircle } from "react-icons/bs";
 import { RiHealthBookFill } from "react-icons/ri";
 import { BiSolidReport } from "react-icons/bi";
+import { IoMdPersonAdd } from "react-icons/io";
 
 
-import logo from '../../../../LoginAssets/logo.png';
+import logo from '../../../LoginAssets/logo.png';
 
 
-const SideBar = () => {
+const SideBaram = () => {
   return (
     <div className='sideBar grid'>
 
@@ -26,26 +27,36 @@ const SideBar = () => {
       <div className="menuDiv">
         
         <ul className="menuLists grid">
+          
           <li className='listitem'>
+            <Link to='/DashboardAdmin' className='menuLink flex'>
+              <BiSolidReport className='icon'/>
+              <span className='smallText'>
+                User Data
+              </span>
+            </Link>
+          </li>
+          
+          <li className='listitem'>
+          <Link to='/DashboardAdminrecord' className='menuLink flex'>
             <a href='#' className='menuLink flex'>
               <RiHealthBookFill className='icon'/>
               <span className='smallText'>
-                การบันทึกสุขภาพ
+              Patient Record
               </span>
             </a>
+            </Link>
           </li>
 
-          
           <li className='listitem'>
-            <Link to='/Dashboardshart' className='menuLink flex'>
-              <BiSolidReport className='icon'/>
-              <span className='smallText'>
-                กราฟเปรียบเทียบ
-                ค่าน้ำตาลสะสม <br/>และภาพรวมข้อมูล
-              </span>
+            <Link to='/DashboardAdminUser' className='menuLink flex'>
+              <a href='#' className='menuLink flex'>
+                <IoMdPersonAdd className='icon'/>
+                <span className='smallText'>
+                  Add User
+                </span>
+              </a>
             </Link>
-
-
           </li>
         
         </ul>
@@ -67,4 +78,4 @@ const SideBar = () => {
   )
 }
 
-export default SideBar
+export default SideBaram

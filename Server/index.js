@@ -19,17 +19,59 @@ const db = mysql.createConnection({
     database: 'pepledb',
 })
 
-app.get('/listingshart',(req,res) => {
-    const SQL ='SELECT * FROM userdata '
-    db.query(SQL,(err, results) => {
+app.get('/listingshart', (req, res) => {
+    const SQL = 'SELECT * FROM userdata';
+    db.query(SQL, (err, results) => {
         if (err) {
-            res.send(err)
+            res.send(err);
+        } else {
+            res.send(results);
         }
-        else {
-            res.send(results)
+    });
+});
+
+// app.post('/saveUserData', (req, res) => {
+//     const { Weight, Bloodpressure, Height, Wccfr, Sgvbefore, SgvAfter, Acmlsugarlevel, Date } = req.body;
+
+//     // ตรวจสอบว่าได้รับข้อมูลครบถ้วน
+//     if (!Weight || !Bloodpressure || !Height || !Wccfr || !Sgvbefore || !SgvAfter || !Acmlsugarlevel || !Date) {
+//         return res.status(400).send({ message: 'All fields are required' });
+//     }
+
+//     const SQL = 'INSERT INTO userdata (date, weight, bpressure, height, wccfr, Sgvbefore, SgvAfter, Acmlsugarlevel) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+//     const values = [Date, Weight, Bloodpressure, Height, Wccfr, Sgvbefore, SgvAfter, Acmlsugarlevel];
+
+//     db.query(SQL, values, (err, results) => {
+//         if (err) {
+//             return res.status(500).send({ error: 'Database error', details: err });
+//         }
+//         res.status(200).send({ message: 'Data saved successfully' });
+//     });
+// });
+
+
+app.post('/saveUserData', (req, res) => {
+    const sentWeight =  req.body.Weight
+    const sentBloodpressure =  req.body.Bloodpressure
+    const sentHeight =  req.body.Height
+    const sentWccfr =  req.body.Wccfr
+    const sentSgvbefore =  req.body.Sgvbefore
+    const sentSgvAfter =  req.body.SgvAfter
+    const sentAcmlsugarlevel =  req.body.Acmlsugarlevel
+    const sentDate =  req.body.Date
+
+    const SQL = 'INSERT INTO userdata (date, weight, bpressure, height, wccfr, Sgvbefore, SgvAfter, Acmlsugarlevel) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+    const values = [sentDate, sentWeight, sentBloodpressure, sentHeight, 
+        sentWccfr, sentSgvbefore, sentSgvAfter, sentAcmlsugarlevel];
+    db.query(SQL, values, (err, results) => {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send({ message: 'Data saved successfully' });
         }
-    })
-})
+    });
+});
+
 
 app.post('/register', (req, res) => {
     const sentUsername = req.body.Username
